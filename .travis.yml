@@ -1,0 +1,25 @@
+sudo: false
+language: python
+python:
+- '2.7'
+- '3.4'
+- '3.5'
+- '3.6'
+before_script:
+- pip install -e .
+- pip install pep8
+- pip install nose2
+- pip install coverage
+- pip install python-coveralls
+- bash travis-ci/build_certs.sh
+- python travis-ci/live_server.py &
+- python travis-ci/live_ssl_server.py &
+- python travis-ci/live_ssl_bad_server.py &
+script:
+- pep8 uw_coda
+- python -m compileall uw_coda/
+after_script:
+- coveralls
+before_deploy:
+- find restclients_core/ -name \*.pyc -exec rm {} \;
+- echo $TRAVIS_TAG > uw_coda/VERSION
