@@ -5,7 +5,7 @@ import uw_coda
 POL_S_LABEL = "2014-winter-POL%20S-201-A"
 
 
-class TestTest(TestCase):
+class TestEndpoints(TestCase):
 
     def test_fail_rate(self):
         fail_rate = uw_coda.get_fail_rate(POL_S_LABEL)

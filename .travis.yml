@@ -14,6 +14,7 @@ before_script:
 script:
 - pycodestyle uw_coda
 - python -m compileall uw_coda/
+- coverage run uw_coda/test.py -v
 after_script:
 - coveralls
 before_deploy:

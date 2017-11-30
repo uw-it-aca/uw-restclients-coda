@@ -22,7 +22,8 @@ setup(
     author="UW-IT AXDD",
     author_email="aca-it@uw.edu",
     include_package_data=True,
-    install_requires=['commonconf>=0.6'],
+    install_requires=['commonconf>=0.6',
+                      'uw-restclients-core'],
     license='Apache License, Version 2.0',
     description=('A restclient for accessing the Instructor Course Dashboards'
                  'application at the University of Washington'),
