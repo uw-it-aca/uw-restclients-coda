@@ -19,4 +19,3 @@ class TestTest(TestCase):
     def test_cgpa(self):
         fail_rate = uw_coda.get_course_cgpa(POL_S_LABEL)
         self.assertEqual(fail_rate['current_median'], 3.4)
-
