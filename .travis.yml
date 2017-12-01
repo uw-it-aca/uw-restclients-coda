@@ -20,3 +20,13 @@ after_script:
 before_deploy:
 - find restclients_core/ -name \*.pyc -exec rm {} \;
 - echo $TRAVIS_TAG > uw_coda/VERSION
+deploy:
+  provider: pypi
+  user: uw-it-aca
+  server: https://test.pypi.org
+  skip_cleanup: true
+  password:
+    secure: c2BSNPAyWkk7PDOTdq29XP/X8VsVhTEEjhnLoj3030fXh8erK5eMA+YTaFCNsQMMidaU1HC9DY2LPF5FAvBR4rqHSAZWxmePIWKL1gdJtziIMahT6qyUuoTwbgrDzFUQ+jZY8PVkHiqgSolZ/XQJzBI5hv4xFX/mkVEPyWxG+9XAtieBCGpi7z2nsnzhuj4zTFTzZwqGsiqBccozRBIOokDQNqSH/JbaJVmJA+rqVJTZ/G4DumsS3zzoTeBdV8M5NhuYgGBOm5tudkeDFNSdcutmCTUbbqdTqeMQbQiKLIyqqWq2b8JUkgqzGISnx/FXFLhHP0Otiy6kONZLs05OSsDadpuEOl/yiiQ9+aOlGbAVAgaLUpfrTu8VhH6ECfK2kJY8w2yH4eCZ7OmSPrCUZesrFxZizhftBVV3wvc8ybYzcfTIimvJdODObqmD9GkYEsw4ZbUgLYOIhiaZ7pUThNC+s1UYAQMzLYlcaL9+T1TEZDRjSdbyJiHNVN43pfdZ/fjEDtpwiNA+rf0yzH5YfVeQB+qGKyKjBWf0Rt+e3P5gBs/oHtkgU6AKghqg2KHDGAgU24mB7/vo/KRkqhoyxysP++cjupSmEiCMUqDuCJ6RNdYm7bywV6K4ZTS5TxnNOlkq8KqCtED0PkGAUDBzn/LMGoeGJfsc2MCZKKhFlmk=
+  on:
+    tags: true
+    python: '3.5'
