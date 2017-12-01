@@ -18,7 +18,7 @@ script:
 after_script:
 - coveralls
 before_deploy:
-- find restclients_core/ -name \*.pyc -exec rm {} \;
+- find uw_coda/ -name \*.pyc -exec rm {} \;
 - echo $TRAVIS_TAG > uw_coda/VERSION
 deploy:
   provider: pypi
