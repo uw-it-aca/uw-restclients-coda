@@ -3,6 +3,7 @@ from unittest import TestCase
 import uw_coda
 
 POL_S_LABEL = "2014-winter-POL%20S-201-A"
+POL_S_AA_LABEL = "2014-winter-POL%20S-201-AA"
 
 
 class TestEndpoints(TestCase):
@@ -19,3 +20,8 @@ class TestEndpoints(TestCase):
     def test_cgpa(self):
         fail_rate = uw_coda.get_course_cgpa(POL_S_LABEL)
         self.assertEqual(fail_rate['current_median'], 3.4)
+
+    def test_secondary(self):
+
+        fail_rate = uw_coda.get_course_cgpa(POL_S_AA_LABEL)
+        self.assertEquals(fail_rate, {})

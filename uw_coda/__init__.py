@@ -7,7 +7,13 @@ DAO = CoDa_DAO()
 API_BASE = "/api/v1/course/%s/"
 
 
-def get_resource(url):
+def get_resource(section_label, endpoint):
+    section_label = format_section_label(section_label)
+    url = get_offering_url(section_label) + endpoint
+
+    if _is_secondary(section_label):
+        return {}
+
     response = DAO.getURL(url)
 
     if response.status != 200:
@@ -17,22 +23,28 @@ def get_resource(url):
 
 
 def get_majors(section_label, num_majors):
-    url = get_offering_url(section_label) + "majors/" + str(num_majors)
-
-    return get_resource(url)
+    return get_resource(section_label, "majors/" + str(num_majors))
 
 
 def get_fail_rate(section_label):
-    url = get_offering_url(section_label) + "fail_rate"
-
-    return get_resource(url)
+    return get_resource(section_label, "fail_rate")
 
 
 def get_course_cgpa(section_label):
-    url = get_offering_url(section_label) + "cgpa"
-
-    return get_resource(url)
+    return get_resource(section_label, "cgpa")
 
 
 def get_offering_url(section_label):
-    return API_BASE % (section_label.replace(",", "-").replace("/", "-"))
+    return API_BASE % section_label
+
+
+def format_section_label(section_label):
+    return section_label.replace(",", "-").replace("/", "-")
+
+
+def _is_secondary(section_label):
+    parts = section_label.split("-")
+
+    id = parts[len(parts) - 1]
+
+    return len(id) > 1
