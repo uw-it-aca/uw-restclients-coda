@@ -17,19 +17,19 @@ def get_resource(url):
 
 
 def get_majors(section_label, num_majors):
-    url = get_offering_url(section_label) + "/majors/" + str(num_majors)
+    url = get_offering_url(section_label) + "majors/" + str(num_majors)
 
     return get_resource(url)
 
 
 def get_fail_rate(section_label):
-    url = get_offering_url(section_label) + "/fail_rate"
+    url = get_offering_url(section_label) + "fail_rate"
 
     return get_resource(url)
 
 
 def get_course_cgpa(section_label):
-    url = get_offering_url(section_label) + "/cgpa"
+    url = get_offering_url(section_label) + "cgpa"
 
     return get_resource(url)
 
