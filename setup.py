@@ -22,8 +22,8 @@ setup(
     author="UW-IT AXDD",
     author_email="aca-it@uw.edu",
     include_package_data=True,
-    install_requires=['commonconf>=0.6',
-                      'uw-restclients-core'],
+    install_requires=['commonconf>=1.0',
+                      'uw-restclients-core>1.0,<2.0'],
     license='Apache License, Version 2.0',
     description=('A restclient for accessing the Instructor Course Dashboards'
                  'application at the University of Washington'),
@@ -34,8 +34,7 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.6',
     ],
 )
 
