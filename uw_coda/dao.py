@@ -15,6 +15,6 @@ class CoDa_DAO(DAO):
 
         token = self.get_service_setting('AUTH_TOKEN')
         if token is not None:
-            custom_headers["Authorization"] = "Token %s" % token
+            custom_headers["Authorization"] = "Token {}".format(token)
 
         return custom_headers

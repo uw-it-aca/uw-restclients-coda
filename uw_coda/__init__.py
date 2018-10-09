@@ -4,7 +4,7 @@ import json
 
 DAO = CoDa_DAO()
 
-API_BASE = "/api/v1/course/%s/"
+API_BASE = "/api/v1/course/{id}/"
 
 
 def get_resource(section_label, endpoint):
@@ -23,7 +23,7 @@ def get_resource(section_label, endpoint):
 
 
 def get_majors(section_label, num_majors):
-    return get_resource(section_label, "majors/" + str(num_majors))
+    return get_resource(section_label, "majors/{}".format(num_majors))
 
 
 def get_fail_rate(section_label):
@@ -35,7 +35,7 @@ def get_course_cgpa(section_label):
 
 
 def get_offering_url(section_label):
-    return API_BASE % section_label
+    return API_BASE.format(id=section_label)
 
 
 def format_section_label(section_label):
