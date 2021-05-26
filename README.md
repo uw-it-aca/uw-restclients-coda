@@ -1,7 +1,11 @@
-[![Build Status](https://api.travis-ci.org/uw-it-aca/uw-restclients-coda.svg?branch=master)](https://travis-ci.org/uw-it-aca/uw-restclients-coda)
-[![Coverage Status](https://coveralls.io/repos/github/uw-it-aca/uw-restclients-coda/badge.svg?branch=master)](https://coveralls.io/github/uw-it-aca/uw-restclients-coda?branch=master)
+# REST client for the UW Instructor Course Dashboards API
 
-uw-restclients-coda
-===================
+[![Build Status](https://github.com/uw-it-aca/uw-restclients-coda/workflows/tests/badge.svg?branch=main)](https://github.com/uw-it-aca/uw-restclients-coda/actions)
+[![Coverage Status](https://coveralls.io/repos/uw-it-aca/uw-restclients-coda/badge.svg?branch=main)](https://coveralls.io/r/uw-it-aca/uw-restclients-coda?branch=main)
+[![PyPi Version](https://img.shields.io/pypi/v/uw-restclients-coda.svg)](https://pypi.python.org/pypi/uw-restclients-coda)
+![Python versions](https://img.shields.io/pypi/pyversions/uw-restclients-coda.svg)
 
-A restclient for accessing the Instructor Course Dashboards application at the University of Washington
+
+Installation:
+
+    pip install UW-RestClients-Coda
