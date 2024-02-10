@@ -25,6 +25,5 @@ class TestEndpoints(TestCase):
         self.assertEqual(fail_rate['current_median'], 3.4)
 
     def test_secondary(self):
-
         fail_rate = uw_coda.get_course_cgpa(POL_S_AA_LABEL)
-        self.assertEquals(fail_rate, {})
+        self.assertEqual(fail_rate, {})
