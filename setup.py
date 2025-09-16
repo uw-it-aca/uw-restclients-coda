@@ -21,7 +21,7 @@ setup(
     name='UW-RestClients-CoDa',
     version=VERSION,
     packages=['uw_coda'],
-    author="UW-IT T&LS",
+    author="UW-IT SETS",
     author_email="aca-it@uw.edu",
     include_package_data=True,
     install_requires=['UW-RestClients-Core'],
